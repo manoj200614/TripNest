@@ -1,0 +1,347 @@
+/* =========================
+   TRIPNEST CUSTOM STYLES
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2937;
+    background: #ffffff;
+}
+
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+.trip-navbar {
+    background: linear-gradient(135deg, #0f766e, #0d9488);
+    padding: 14px 0;
+}
+
+.trip-navbar .nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 6px;
+}
+
+.trip-navbar .nav-link:hover,
+.trip-navbar .nav-link.active {
+    color: #ffffff;
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero-section {
+    padding: 90px 0;
+    background: linear-gradient(
+        135deg,
+        #ecfdf5 0%,
+        #f0fdfa 50%,
+        #ffffff 100%
+    );
+}
+
+.hero-badge {
+    background: #ccfbf1;
+    color: #0f766e;
+    padding: 10px 16px;
+    border-radius: 50px;
+}
+
+.highlight {
+    color: #0d9488;
+}
+
+.hero-section .lead {
+    max-width: 650px;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   TRAVEL CARD
+   ========================= */
+
+.travel-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.10);
+    transform: rotate(1deg);
+}
+
+.travel-card-top {
+    display: flex;
+    justify-content: space-between;
+    color: #64748b;
+}
+
+.travel-card .progress {
+    height: 8px;
+}
+
+.travel-card .progress-bar {
+    background: #0d9488;
+}
+
+
+/* =========================
+   SECTIONS
+   ========================= */
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-heading {
+    margin-bottom: 40px;
+}
+
+.section-heading span,
+.section-label {
+    color: #0d9488;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================
+   STAT CARDS
+   ========================= */
+
+.stat-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 25px;
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.icon-box {
+    width: 50px;
+    height: 50px;
+    background: #ccfbf1;
+    color: #0f766e;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.stat-card h3 {
+    font-weight: 700;
+}
+
+
+/* =========================
+   TRIP CARDS
+   ========================= */
+
+.trip-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    transition: 0.3s;
+}
+
+.trip-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+}
+
+.trip-image {
+    height: 190px;
+    position: relative;
+}
+
+.goa-image {
+    background:
+        linear-gradient(
+            rgba(13, 148, 136, 0.2),
+            rgba(13, 148, 136, 0.2)
+        ),
+        linear-gradient(135deg, #67e8f9, #14b8a6);
+}
+
+.manali-image {
+    background:
+        linear-gradient(
+            rgba(59, 130, 246, 0.2),
+            rgba(59, 130, 246, 0.2)
+        ),
+        linear-gradient(135deg, #bfdbfe, #60a5fa);
+}
+
+.kerala-image {
+    background:
+        linear-gradient(
+            rgba(34, 197, 94, 0.2),
+            rgba(34, 197, 94, 0.2)
+        ),
+        linear-gradient(135deg, #bbf7d0, #22c55e);
+}
+
+.trip-status {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #ffffff;
+    color: #0f766e;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.trip-status.completed {
+    color: #15803d;
+}
+
+
+/* =========================
+   ITINERARY
+   ========================= */
+
+.itinerary-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.timeline-item:last-child {
+    border-bottom: none;
+}
+
+.timeline-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    border-radius: 50%;
+    background: #ccfbf1;
+    color: #0f766e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   EXPENSES
+   ========================= */
+
+.expense-card {
+    background: #ffffff;
+    border-radius: 25px;
+    padding: 30px;
+    border: 1px solid #e5e7eb;
+}
+
+.expense-card .progress {
+    height: 10px;
+}
+
+.expense-card .progress-bar {
+    background: #0d9488;
+}
+
+
+/* =========================
+   DESTINATIONS
+   ========================= */
+
+.destination-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 22px;
+    padding: 30px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.destination-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.destination-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.trip-footer {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 45px 0;
+}
+
+.trip-footer p {
+    color: #94a3b8;
+}
+
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.btn-primary {
+    background-color: #0d9488;
+    border-color: #0d9488;
+}
+
+.btn-primary:hover {
+    background-color: #0f766e;
+    border-color: #0f766e;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        padding: 60px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 42px;
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .travel-card {
+        transform: none;
+    }
+}

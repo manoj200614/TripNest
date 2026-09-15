@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TripNest - Smart Trip Planner</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark trip-navbar">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold fs-3" href="#">
+            <i class="bi bi-airplane-engines"></i>
+            TripNest
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="#dashboard">
+                        Dashboard
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#trips">
+                        My Trips
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#explore">
+                        Explore
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#expenses">
+                        Expenses
+                    </a>
+                </li>
+
+                <li class="nav-item ms-lg-3">
+                    <button
+                        class="btn btn-light rounded-pill px-4"
+                        data-bs-toggle="modal"
+                        data-bs-target="#createTripModal"
+                    >
+                        <i class="bi bi-plus-lg"></i>
+                        Create Trip
+                    </button>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero-section">
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-7">
+
+                <span class="badge hero-badge mb-3">
+                    <i class="bi bi-stars"></i>
+                    Your journey, organized
+                </span>
+
+                <h1 class="display-3 fw-bold mb-4">
+                    Plan your trip.
+                    <span class="highlight">Share the adventure.</span>
+                </h1>
+
+                <p class="lead text-secondary mb-4">
+                    TripNest helps you create itineraries, manage travel
+                    schedules, track expenses and plan unforgettable journeys
+                    with friends and family.
+                </p>
+
+                <div class="d-flex gap-3 flex-wrap">
+
+                    <button
+                        class="btn btn-primary btn-lg rounded-pill px-4"
+                        data-bs-toggle="modal"
+                        data-bs-target="#createTripModal"
+                    >
+                        <i class="bi bi-plus-circle"></i>
+                        Create New Trip
+                    </button>
+
+                    <a
+                        href="#explore"
+                        class="btn btn-outline-dark btn-lg rounded-pill px-4"
+                    >
+                        <i class="bi bi-compass"></i>
+                        Explore
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-5 mt-5 mt-lg-0">
+
+                <div class="travel-card">
+
+                    <div class="travel-card-top">
+                        <span>Next Adventure</span>
+                        <i class="bi bi-three-dots"></i>
+                    </div>
+
+                    <h3 class="fw-bold mt-3">
+                        Goa Getaway
+                    </h3>
+
+                    <p class="text-secondary">
+                        <i class="bi bi-calendar3"></i>
+                        15 Dec - 19 Dec
+                    </p>
+
+                    <div class="progress mb-3">
+                        <div
+                            class="progress-bar"
+                            style="width: 72%"
+                        ></div>
+                    </div>
+
+                    <div class="d-flex justify-content-between small">
+                        <span>Trip Planning</span>
+                        <strong>72%</strong>
+                    </div>
+
+                    <hr>
+
+                    <div class="row text-center">
+
+                        <div class="col-4">
+                            <i class="bi bi-geo-alt fs-4"></i>
+                            <p class="small mb-0 mt-1">5 Places</p>
+                        </div>
+
+                        <div class="col-4">
+                            <i class="bi bi-people fs-4"></i>
+                            <p class="small mb-0 mt-1">4 People</p>
+                        </div>
+
+                        <div class="col-4">
+                            <i class="bi bi-wallet2 fs-4"></i>
+                            <p class="small mb-0 mt-1">₹25K</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= DASHBOARD ================= -->
+
+<section id="dashboard" class="section-padding">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span>YOUR TRAVEL DASHBOARD</span>
+
+            <h2 class="fw-bold">
+                Everything in one place
+            </h2>
+
+            <p class="text-secondary">
+                Keep your trips, schedules and expenses organized.
+            </p>
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- Trips -->
+            <div class="col-md-6 col-lg-3">
+
+                <div class="stat-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-map"></i>
+                    </div>
+
+                    <h3>08</h3>
+
+                    <p class="text-secondary mb-0">
+                        Total Trips
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Destinations -->
+            <div class="col-md-6 col-lg-3">
+
+                <div class="stat-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-geo-alt"></i>
+                    </div>
+
+                    <h3>24</h3>
+
+                    <p class="text-secondary mb-0">
+                        Destinations
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Travelers -->
+            <div class="col-md-6 col-lg-3">
+
+                <div class="stat-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-people"></i>
+                    </div>
+
+                    <h3>16</h3>
+
+                    <p class="text-secondary mb-0">
+                        Travel Partners
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Expenses -->
+            <div class="col-md-6 col-lg-3">
+
+                <div class="stat-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-cash-stack"></i>
+                    </div>
+
+                    <h3>₹68K</h3>
+
+                    <p class="text-secondary mb-0">
+                        Trip Expenses
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MY TRIPS ================= -->
+
+<section id="trips" class="section-padding bg-light">
+
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+            <div>
+                <span class="section-label">
+                    YOUR JOURNEYS
+                </span>
+
+                <h2 class="fw-bold mb-0">
+                    My Trips
+                </h2>
+            </div>
+
+            <button
+                class="btn btn-primary rounded-pill"
+                data-bs-toggle="modal"
+                data-bs-target="#createTripModal"
+            >
+                <i class="bi bi-plus-lg"></i>
+                New Trip
+            </button>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- Trip 1 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="trip-card">
+
+                    <div class="trip-image goa-image">
+                        <span class="trip-status">
+                            Upcoming
+                        </span>
+                    </div>
+
+                    <div class="p-4">
+
+                        <h4 class="fw-bold">
+                            Goa Getaway
+                        </h4>
+
+                        <p class="text-secondary">
+                            <i class="bi bi-calendar"></i>
+                            15 Dec - 19 Dec
+                        </p>
+
+                        <div class="d-flex justify-content-between">
+
+                            <span>
+                                <i class="bi bi-people"></i>
+                                4 Travelers
+                            </span>
+
+                            <strong>
+                                ₹25,000
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Trip 2 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="trip-card">
+
+                    <div class="trip-image manali-image">
+                        <span class="trip-status">
+                            Planning
+                        </span>
+                    </div>
+
+                    <div class="p-4">
+
+                        <h4 class="fw-bold">
+                            Manali Escape
+                        </h4>
+
+                        <p class="text-secondary">
+                            <i class="bi bi-calendar"></i>
+                            10 Jan - 15 Jan
+                        </p>
+
+                        <div class="d-flex justify-content-between">
+
+                            <span>
+                                <i class="bi bi-people"></i>
+                                3 Travelers
+                            </span>
+
+                            <strong>
+                                ₹32,000
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Trip 3 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="trip-card">
+
+                    <div class="trip-image kerala-image">
+                        <span class="trip-status completed">
+                            Completed
+                        </span>
+                    </div>
+
+                    <div class="p-4">
+
+                        <h4 class="fw-bold">
+                            Kerala Journey
+                        </h4>
+
+                        <p class="text-secondary">
+                            <i class="bi bi-calendar"></i>
+                            05 Aug - 10 Aug
+                        </p>
+
+                        <div class="d-flex justify-content-between">
+
+                            <span>
+                                <i class="bi bi-people"></i>
+                                5 Travelers
+                            </span>
+
+                            <strong>
+                                ₹41,000
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ITINERARY ================= -->
+
+<section class="section-padding">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-5">
+
+                <span class="section-label">
+                    SMART PLANNING
+                </span>
+
+                <h2 class="display-6 fw-bold mb-4">
+                    Build your perfect itinerary
+                </h2>
+
+                <p class="text-secondary">
+                    Organize every day of your trip with activities,
+                    destinations, travel times and important notes.
+                    Keep everything accessible from one place.
+                </p>
+
+                <button
+                    class="btn btn-primary rounded-pill px-4"
+                >
+                    <i class="bi bi-calendar-plus"></i>
+                    Add Activity
+                </button>
+
+            </div>
+
+
+            <div class="col-lg-7 mt-5 mt-lg-0">
+
+                <div class="itinerary-card">
+
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+
+                        <div>
+                            <h4 class="fw-bold mb-1">
+                                Day 2 — North Goa
+                            </h4>
+
+                            <small class="text-secondary">
+                                Tuesday, December 16
+                            </small>
+                        </div>
+
+                        <span class="badge bg-primary">
+                            3 Activities
+                        </span>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-icon">
+                            <i class="bi bi-sun"></i>
+                        </div>
+
+                        <div>
+                            <strong>Breakfast at Candolim</strong>
+                            <p class="small text-secondary mb-0">
+                                08:00 AM · 1 hour
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-icon">
+                            <i class="bi bi-camera"></i>
+                        </div>
+
+                        <div>
+                            <strong>Visit Fort Aguada</strong>
+                            <p class="small text-secondary mb-0">
+                                10:30 AM · 2 hours
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-icon">
+                            <i class="bi bi-water"></i>
+                        </div>
+
+                        <div>
+                            <strong>Baga Beach</strong>
+                            <p class="small text-secondary mb-0">
+                                03:00 PM · 3 hours
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPENSES ================= -->
+
+<section id="expenses" class="section-padding bg-light">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-lg-6">
+
+                <span class="section-label">
+                    BUDGET MANAGEMENT
+                </span>
+
+                <h2 class="fw-bold mb-3">
+                    Track your trip expenses
+                </h2>
+
+                <p class="text-secondary">
+                    Keep track of transportation, hotels, food and
+                    activities so you always know where your money goes.
+                </p>
+
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <div class="expense-card">
+
+                    <div class="d-flex justify-content-between">
+
+                        <div>
+                            <small class="text-secondary">
+                                Total Budget
+                            </small>
+
+                            <h2 class="fw-bold">
+                                ₹25,000
+                            </h2>
+                        </div>
+
+                        <div class="text-end">
+                            <small class="text-secondary">
+                                Spent
+                            </small>
+
+                            <h4 class="fw-bold">
+                                ₹17,450
+                            </h4>
+                        </div>
+
+                    </div>
+
+                    <div class="progress my-4">
+
+                        <div
+                            class="progress-bar"
+                            style="width: 70%"
+                        ></div>
+
+                    </div>
+
+
+                    <div class="row text-center">
+
+                        <div class="col-4">
+
+                            <i class="bi bi-car-front"></i>
+
+                            <p class="small mt-2 mb-0">
+                                Travel
+                            </p>
+
+                            <strong>
+                                ₹6,500
+                            </strong>
+
+                        </div>
+
+                        <div class="col-4">
+
+                            <i class="bi bi-building"></i>
+
+                            <p class="small mt-2 mb-0">
+                                Hotels
+                            </p>
+
+                            <strong>
+                                ₹7,200
+                            </strong>
+
+                        </div>
+
+                        <div class="col-4">
+
+                            <i class="bi bi-cup-hot"></i>
+
+                            <p class="small mt-2 mb-0">
+                                Food
+                            </p>
+
+                            <strong>
+                                ₹3,750
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPLORE ================= -->
+
+<section id="explore" class="section-padding">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-label">
+                GET INSPIRED
+            </span>
+
+            <h2 class="fw-bold">
+                Explore Popular Destinations
+            </h2>
+
+            <p class="text-secondary">
+                Discover places for your next adventure.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="destination-card">
+                    <div class="destination-icon">🏝️</div>
+
+                    <h4 class="fw-bold">
+                        Goa
+                    </h4>
+
+                    <p class="text-secondary">
+                        Beaches, nightlife and unforgettable sunsets.
+                    </p>
+
+                    <button class="btn btn-outline-primary rounded-pill">
+                        Explore
+                    </button>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="destination-card">
+                    <div class="destination-icon">🏔️</div>
+
+                    <h4 class="fw-bold">
+                        Manali
+                    </h4>
+
+                    <p class="text-secondary">
+                        Mountains, snow and beautiful landscapes.
+                    </p>
+
+                    <button class="btn btn-outline-primary rounded-pill">
+                        Explore
+                    </button>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="destination-card">
+                    <div class="destination-icon">🌴</div>
+
+                    <h4 class="fw-bold">
+                        Kerala
+                    </h4>
+
+                    <p class="text-secondary">
+                        Backwaters, nature and peaceful escapes.
+                    </p>
+
+                    <button class="btn btn-outline-primary rounded-pill">
+                        Explore
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="trip-footer">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <h4 class="fw-bold">
+                    <i class="bi bi-airplane-engines"></i>
+                    TripNest
+                </h4>
+
+                <p>
+                    Plan together. Travel better.
+                </p>
+
+            </div>
+
+            <div class="col-md-6 text-md-end">
+
+                <p class="mb-0">
+                    © 2026 TripNest. All rights reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= CREATE TRIP MODAL ================= -->
+
+<div
+    class="modal fade"
+    id="createTripModal"
+    tabindex="-1"
+    aria-hidden="true"
+>
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title fw-bold">
+                    <i class="bi bi-plus-circle"></i>
+                    Create New Trip
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                ></button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <form id="tripForm">
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Trip Name
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="tripName"
+                            placeholder="e.g. Goa Adventure"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Destination
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="tripDestination"
+                            placeholder="e.g. Goa"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+                                Start Date
+                            </label>
+
+                            <input
+                                type="date"
+                                class="form-control"
+                                id="startDate"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+                                End Date
+                            </label>
+
+                            <input
+                                type="date"
+                                class="form-control"
+                                id="endDate"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Estimated Budget
+                        </label>
+
+                        <input
+                            type="number"
+                            class="form-control"
+                            id="tripBudget"
+                            placeholder="₹"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary w-100 rounded-pill"
+                    >
+                        Create Trip
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Bootstrap JavaScript -->
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+></script>
+
+<!-- Our JavaScript -->
+ <script src="script.js"></script>
+
+</body>
+</html>
